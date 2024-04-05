@@ -9,9 +9,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+
       - name: Publish Docker Image
         uses: matootie/github-docker@v3.1.0
         with:
@@ -19,6 +21,7 @@ jobs:
           containerRegistry: true
           buildArgs: |
             PUBLIC_HELLO=world
+
       - name: Deploy on CapRover
         uses: caprover/deploy-from-github@v1.1.2
         with:

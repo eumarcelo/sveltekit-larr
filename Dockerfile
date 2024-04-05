@@ -5,7 +5,7 @@ COPY . /usr/src/app
 RUN npm install
 RUN npm run build
 
-FROM node:20-alpine
+FROM node:29-alpine
 WORKDIR /usr/src/app
 
 COPY --from=sk-build /usr/src/app/package.json /usr/src/app/package.json
@@ -15,4 +15,4 @@ RUN npm i --only=production
 COPY --from=sk-build /usr/src/app/build /usr/src/app/build
 
 EXPOSE 3000
-CMD ["node", "build/index.js"]
+CMD [ "npm", "run", "start:node" ]

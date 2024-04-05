@@ -41,5 +41,5 @@ RUN npm run build
 RUN rm -rf src/ static/
 
 # This is the command that will be run inside the image when you tell Docker to start the container
-EXPOSE 5173
+EXPOSE 3000
 CMD ["node","build/index.js"]

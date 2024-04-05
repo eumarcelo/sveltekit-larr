@@ -27,4 +27,4 @@ jobs:
           server: https://larr.cc
           app: 'sveltekit'
           token: '${{ secrets.APP_TOKEN }}'
-          image: 'ghcr.io/eumarcelo/sveltekit:latest'
+          image: 'ghcr.io/eumarcelo/sveltekit-larr:latest'
